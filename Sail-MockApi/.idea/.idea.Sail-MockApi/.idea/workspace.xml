@@ -9,26 +9,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c11c2d8c-c825-4bad-8169-1aa6b52b51ba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/ChatController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/TaskController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/ChatGroupAddUsersDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/ChatGroupRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/ChatGroupResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/ChatMessageRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/ChatMessageResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/DtoErrorObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/DtoResponseObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/GroupUserResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/RemoveGroupUserRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/TaskRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/TaskResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Helpers/DateHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Helpers/DtoFormatGenerator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/RequestQueries/GetChatGroupsQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/RequestQueries/GetChatMessagesQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/RequestQueries/GetTasksQuery.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sail-MockApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sail-MockApi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Sail-MockApi.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Sail-MockApi.Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,20 +47,20 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Sail-MockApi.Api: http.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dewi-chat-and-task",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "Docker",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Sail-MockApi.Api: http.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dewi-chat-and-task&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Docker&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Sail-MockApi.Api: http">
     <configuration name="Sail-MockApi.Api: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Sail-MockApi.Api/Sail-MockApi.Api.csproj" />
