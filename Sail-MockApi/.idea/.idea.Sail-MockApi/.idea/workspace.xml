@@ -10,9 +10,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c11c2d8c-c825-4bad-8169-1aa6b52b51ba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sail-MockApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sail-MockApi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/ChatController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/ChatController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/TaskController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/TaskController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
