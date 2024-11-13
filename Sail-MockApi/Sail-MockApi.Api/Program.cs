@@ -10,15 +10,16 @@ builder.Services.AddSwaggerGen();
 
 //. DataServices here
 builder.Services.AddScoped<ExampleDataService>();
+
 builder.Services.AddSingleton<CheckinService>();
 builder.Services.AddSingleton<UserService>();
 
 builder.Services.AddSingleton<InformationService>();
-
-
-
-
 builder.Services.AddSingleton<TimeblockService>();
+builder.Services.AddScoped<GroupService>();
+builder.Services.AddScoped<RoleService>();
+builder.Services.AddScoped<LocationService>();
+builder.Services.AddScoped<MapService>();   
 
 
 var app = builder.Build();
@@ -30,9 +31,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseSwagger();
+app.UseSwaggerUI();
+
 app.MapControllers();
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 
 
 app.Run();
