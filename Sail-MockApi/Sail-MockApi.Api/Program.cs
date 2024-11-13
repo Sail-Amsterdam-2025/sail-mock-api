@@ -16,6 +16,11 @@ builder.Services.AddSingleton<UserService>();
 builder.Services.AddSingleton<InformationService>();
 
 
+
+
+builder.Services.AddSingleton<TimeblockService>();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
