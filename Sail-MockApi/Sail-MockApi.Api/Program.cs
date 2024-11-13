@@ -10,6 +10,8 @@ builder.Services.AddSwaggerGen();
 
 //. DataServices here
 builder.Services.AddScoped<ExampleDataService>();
+builder.Services.AddSingleton<CheckinService>();
+builder.Services.AddSingleton<UserService>();
 
 
 var app = builder.Build();
