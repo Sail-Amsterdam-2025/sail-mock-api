@@ -1,4 +1,3 @@
-using Sail_MockApi.Api.Interfaces;
 using Sail_MockApi.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +9,7 @@ builder.Services.AddEndpointsApiExplorer();
 // builder.Services.AddSwaggerGen();
 
 //. DataServices here
-builder.Services.AddScoped<IDataService, ExampleDataService>();
+builder.Services.AddScoped<ExampleDataService>();
 
 
 var app = builder.Build();
