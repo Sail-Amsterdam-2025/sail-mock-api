@@ -30,9 +30,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseSwagger();
+app.UseSwaggerUI();
+
 app.MapControllers();
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 
 
 app.Run();

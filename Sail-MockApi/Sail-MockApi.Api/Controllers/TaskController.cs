@@ -45,7 +45,7 @@ public class TaskController
     }
     
     //. POST api/tasks
-    [HttpPost("/tasks")]
+    [HttpPost]
     public IActionResult Post([FromBody] TaskRequestDto request)
     {
         TaskResponseDto responseDto = new TaskResponseDto(request);
@@ -55,7 +55,7 @@ public class TaskController
             new DtoResponseObject<TaskResponseDto>("Task was added successfully.", responseDto));
     }
     //. GET api/tasks
-    [HttpGet("/tasks")]
+    [HttpGet]
     public IActionResult Get([FromQuery] GetTasksQuery query)
     {
         IEnumerable<TaskResponseDto> response = _tasks;
@@ -89,11 +89,11 @@ public class TaskController
         {
             response = response.Take(query.Limit.Value);
         }
-        return new OkObjectResult(new DtoResponseObject<List<TaskResponseDto>>( response.Count() + "Tasks retrieved.", response.ToList()));
+        return new OkObjectResult(new DtoResponseObject<List<TaskResponseDto>>( response.Count() + " Tasks retrieved.", response.ToList()));
     }
     
     //. GET api/tasks/{taskId}
-    [HttpGet("/tasks/{taskId}")]
+    [HttpGet("{taskId}")]
     public IActionResult Get(string taskId)
     {
         Guid.TryParse(taskId, out Guid guid);
@@ -111,7 +111,7 @@ public class TaskController
     }
     
     //. PATCH api/tasks/{taskId}
-    [HttpPatch("/tasks/{taskId}")]
+    [HttpPatch("{taskId}")]
     public IActionResult Patch(string taskId, [FromBody] TaskRequestDto request)
     {
         Guid.TryParse(taskId, out Guid guid);
@@ -151,7 +151,7 @@ public class TaskController
     }
     
     //. DELETE api/tasks/{taskId}
-    [HttpDelete("/tasks/{taskId}")]
+    [HttpDelete("{taskId}")]
     public IActionResult Delete(string taskId)
     {
         Guid.TryParse(taskId, out Guid guid);

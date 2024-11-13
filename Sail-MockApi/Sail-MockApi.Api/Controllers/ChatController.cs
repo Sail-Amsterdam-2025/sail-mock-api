@@ -60,7 +60,7 @@ public class ChatController
     }
 
     //. POST api/chat/messages
-    [HttpPost("/messages")]
+    [HttpPost("messages")]
     public IActionResult Post([FromBody] ChatMessageRequestDto request)
     {
         //. Check if all the required fields are present
@@ -77,7 +77,7 @@ public class ChatController
     }
 
     //. GET api/chat/messages
-    [HttpGet("/messages")]
+    [HttpGet("messages")]
     public IActionResult Get([FromQuery] GetChatMessagesQuery query)
     {
         IEnumerable<ChatMessageResponseDto> response = _chatMessages;
@@ -123,7 +123,7 @@ public class ChatController
     }
 
     //. GET api/chat/messages/{messageId}
-    [HttpGet("/messages/{messageId}")]
+    [HttpGet("messages/{messageId}")]
     public IActionResult Get(string messageId)
     {
         Guid.TryParse(messageId, out Guid guid);
@@ -141,7 +141,7 @@ public class ChatController
     }
 
     //. DELETE api/chat/message/{messageId}
-    [HttpDelete("/messages/{messageId}")]
+    [HttpDelete("messages/{messageId}")]
     public IActionResult Delete(string messageId)
     {
         Guid.TryParse(messageId, out Guid guid);
@@ -164,7 +164,7 @@ public class ChatController
     }
 
     //. POST /api/chat/groups
-    [HttpPost("/groups")]
+    [HttpPost("groups")]
     public IActionResult Post([FromBody] ChatGroupRequestDto request)
     {
         ChatGroupResponseDto responseDto = new ChatGroupResponseDto(request);
@@ -177,7 +177,7 @@ public class ChatController
     }
 
     //. GET /api/chat/groups
-    [HttpGet("/groups")]
+    [HttpGet("groups")]
     public IActionResult Get([FromQuery] GetChatGroupsQuery query)
     {
         IEnumerable<ChatGroupResponseDto> response = _groupChats;
@@ -260,7 +260,7 @@ public class ChatController
         return new OkObjectResult(new DtoResponseObject<List<ChatGroupResponseDto>>("Chat message sent successfully.", response.ToList()));
     }
     //. PATCH /api/chat/group/{groupId}
-    [HttpPatch("/groups/{groupId}")]
+    [HttpPatch("groups/{groupId}")]
     public IActionResult Patch(string groupId, [FromBody] ChatGroupRequestDto request)
     {
         Guid.TryParse(groupId, out Guid guid);
@@ -292,7 +292,7 @@ public class ChatController
     }
     
     //. GET /api/chat/group/{groupId}
-    [HttpGet("/groups/{groupId}")]
+    [HttpGet("groups/{groupId}")]
     public IActionResult GetChatGroup(string groupId)
     {
         Guid.TryParse(groupId, out Guid guid);
@@ -308,7 +308,7 @@ public class ChatController
     }
     
     //. DELETE api/chat/groups/{groupId}
-    [HttpDelete("/groups/{groupId}")]
+    [HttpDelete("groups/{groupId}")]
     public IActionResult DeleteChatGroup(string groupId)
     {
         Guid.TryParse(groupId, out Guid guid);
@@ -331,7 +331,7 @@ public class ChatController
     }
     
     //. POST api/chat/groups/addusers/{groupId}
-    [HttpPost("/groups/addusers/{groupId}")]
+    [HttpPost("groups/addusers/{groupId}")]
     public IActionResult AddUsersToGroup(string groupId, [FromBody] ChatGroupAddUsersDto request)
     {
         Guid.TryParse(groupId, out Guid guid);
@@ -368,7 +368,7 @@ public class ChatController
         return new OkObjectResult(new DtoResponseObject<ChatGroupResponseDto>( request.Users.Count + " Users have been added to the group chat.", groupChat));
     }
     //. POST api/chat/groups/removeusers/{groupId}
-    [HttpPost("/groups/removeusers/{groupId}")]
+    [HttpPost("groups/removeusers/{groupId}")]
     public IActionResult RemoveUsersFromGroup(string groupId, [FromBody] RemoveGroupUsersRequestDto request)
     {
         Guid.TryParse(groupId, out Guid guid);
