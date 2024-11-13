@@ -8,7 +8,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c11c2d8c-c825-4bad-8169-1aa6b52b51ba" name="Changes" comment="" />
+    <list default="true" id="c11c2d8c-c825-4bad-8169-1aa6b52b51ba" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/ExampleRequestDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/ExampleResponseDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Interfaces/IRequestDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Interfaces/IResponseDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sail-MockApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sail-MockApi/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Sail-MockApi.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Sail-MockApi.Api.csproj" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,6 +37,9 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2olbeABxXw22YsmSWDULGoCtx36" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -40,7 +51,7 @@
   "keyToString": {
     ".NET Launch Settings Profile.Sail-MockApi.Api: http.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "development",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
