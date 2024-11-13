@@ -9,13 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c11c2d8c-c825-4bad-8169-1aa6b52b51ba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/ExampleRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/ExampleResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Interfaces/IRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Interfaces/IResponseDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sail-MockApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sail-MockApi/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Sail-MockApi.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Sail-MockApi.Api.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +45,7 @@
   "keyToString": {
     ".NET Launch Settings Profile.Sail-MockApi.Api: http.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "development",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
