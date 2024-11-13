@@ -6,11 +6,11 @@ namespace Sail_MockApi.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class TimeblockController : ControllerBase
+    public class TimeblocksController : ControllerBase
     {
         private TimeblockService _timeblockService;
 
-        public TimeblockController(TimeblockService timeblockService)
+        public TimeblocksController(TimeblockService timeblockService)
         {
             _timeblockService = timeblockService;
         }

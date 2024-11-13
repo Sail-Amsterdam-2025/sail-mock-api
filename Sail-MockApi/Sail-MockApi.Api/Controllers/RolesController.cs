@@ -6,12 +6,12 @@ namespace Sail_MockApi.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RoleController : ControllerBase
+    public class RolesController : ControllerBase
     {
 
         private readonly RoleService _roleService;
 
-        public RoleController(RoleService roleService)
+        public RolesController(RoleService roleService)
         {
             _roleService = roleService;
         }

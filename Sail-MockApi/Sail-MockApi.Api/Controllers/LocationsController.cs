@@ -6,12 +6,12 @@ namespace Sail_MockApi.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LocationController : ControllerBase
+    public class LocationsController : ControllerBase
     {
 
         private readonly LocationService _locationService;
 
-        public LocationController(LocationService locationService)
+        public LocationsController(LocationService locationService)
         {
             _locationService = locationService;
         }

@@ -7,11 +7,11 @@ namespace Sail_MockApi.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class InfoCategoryController : ControllerBase
+    public class InfoCategoriesController : ControllerBase
     {
         private readonly InformationService _informationService;
 
-        public InfoCategoryController(InformationService informationService)
+        public InfoCategoriesController(InformationService informationService)
         {
             _informationService = informationService;
         }

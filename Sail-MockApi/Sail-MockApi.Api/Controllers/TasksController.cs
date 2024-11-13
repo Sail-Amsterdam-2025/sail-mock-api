@@ -6,11 +6,11 @@ namespace Sail_MockApi.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class TaskController
+public class TasksController
 {
     private List<TaskResponseDto> _tasks;
 
-    public TaskController()
+    public TasksController()
     {
         _tasks = new List<TaskResponseDto>
         {

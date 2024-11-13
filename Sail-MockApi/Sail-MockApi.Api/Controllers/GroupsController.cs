@@ -7,12 +7,12 @@ namespace Sail_MockApi.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class GroupController : ControllerBase
+    public class GroupsController : ControllerBase
     {
 
         private readonly GroupService _groupService;
 
-        public GroupController(GroupService groupService)
+        public GroupsController(GroupService groupService)
         {
             _groupService = groupService;
         }
