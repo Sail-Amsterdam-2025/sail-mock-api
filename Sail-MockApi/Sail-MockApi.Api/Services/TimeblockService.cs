@@ -13,17 +13,30 @@ namespace Sail_MockApi.Api.Services
             _timeblocks = new List<TimeblockResponseDTO>();
             CreateMockData();
         }
-
         public TimeblockResponseDTO AddTimeblock(TimeblockRequestDTO timeblockRequestDTO)
         {
+            // Parse GroupId
+            Guid groupId;
+            if (!Guid.TryParse(timeblockRequestDTO.GroupId, out groupId))
+            {
+                throw new ArgumentException("Invalid GroupId. Must be an integer.");
+            }
+
+            // Parse LocationId
+            Guid locationId;
+            if (!Guid.TryParse(timeblockRequestDTO.LocationId, out locationId))
+            {
+                throw new ArgumentException("Invalid LocationId. Must be an integer.");
+            }
+
             // Create a new timeblock from the request DTO
             var newTimeblock = new TimeblockResponseDTO
             {
-                Id = _timeblocks.Count + 1, // Generate a new ID
-                GroupId = timeblockRequestDTO.GroupId,
+                Id = Guid.NewGuid(), 
+                GroupId = groupId,
                 StartTime = timeblockRequestDTO.StartTime,
                 EndTime = timeblockRequestDTO.EndTime,
-                LocationId = timeblockRequestDTO.LocationId
+                LocationId = locationId
             };
 
             // Add to in-memory data (this would be a database call in a real app)
@@ -32,7 +45,8 @@ namespace Sail_MockApi.Api.Services
             return newTimeblock;
         }
 
-        public List<TimeblockResponseDTO> GetTimeblocks(int limit, int offset, int? groupId, DateTime? startTime, DateTime? endTime)
+
+        public List<TimeblockResponseDTO> GetTimeblocks(int limit, int offset, Guid? groupId, DateTime? startTime, DateTime? endTime)
         {
             var query = _timeblocks.AsQueryable();
 
@@ -72,13 +86,13 @@ namespace Sail_MockApi.Api.Services
             }
         }
 
-        public TimeblockResponseDTO GetTimeblockById(int timeblockId)
+        public TimeblockResponseDTO GetTimeblockById(Guid timeblockId)
         {
             // In this case, we're assuming _timeblocks is a list containing timeblock data
             return _timeblocks.FirstOrDefault(t => t.Id == timeblockId);
         }
 
-        public bool DeleteTimeblock(int timeblockId)
+        public bool DeleteTimeblock(Guid timeblockId)
         {
             // Find the timeblock to delete
             var timeblock = _timeblocks.FirstOrDefault(t => t.Id == timeblockId);
@@ -101,101 +115,101 @@ namespace Sail_MockApi.Api.Services
         {
             _timeblocks.Add(new TimeblockResponseDTO
             {
-                Id = 1,
-                GroupId = 1,
+                Id = Guid.NewGuid(),
+                GroupId = Guid.NewGuid(),
                 StartTime = DateTime.Parse("2024-04-27T14:30:00Z"),
                 EndTime = DateTime.Parse("2024-04-27T16:00:00Z"),
-                LocationId = 1
+                LocationId = Guid.NewGuid()
             });
 
             _timeblocks.Add(new TimeblockResponseDTO
             {
-                Id = 1,
-                GroupId = 1,
+                Id = Guid.NewGuid(),
+                GroupId = Guid.NewGuid(),
                 StartTime = DateTime.Parse("2024-04-27T14:30:00Z"),
                 EndTime = DateTime.Parse("2024-04-27T16:00:00Z"),
-                LocationId = 1
+                LocationId = Guid.NewGuid()
             });
 
             _timeblocks.Add(new TimeblockResponseDTO
             {
-                Id = 2,
-                GroupId = 2,
+                Id = Guid.NewGuid(),
+                GroupId = Guid.NewGuid(),
                 StartTime = DateTime.Parse("2024-05-01T09:00:00Z"),
                 EndTime = DateTime.Parse("2024-05-01T11:00:00Z"),
-                LocationId = 2
+                LocationId = Guid.NewGuid()
             });
 
             _timeblocks.Add(new TimeblockResponseDTO
             {
-                Id = 3,
-                GroupId = 3,
+                Id = Guid.NewGuid(),
+                GroupId = Guid.NewGuid(),
                 StartTime = DateTime.Parse("2024-05-02T13:00:00Z"),
                 EndTime = DateTime.Parse("2024-05-02T15:00:00Z"),
-                LocationId = 3
+                LocationId = Guid.NewGuid()
             });
 
             _timeblocks.Add(new TimeblockResponseDTO
             {
-                Id = 4,
-                GroupId = 1,
+                Id = Guid.NewGuid(),
+                GroupId = Guid.NewGuid(),
                 StartTime = DateTime.Parse("2024-05-03T08:30:00Z"),
                 EndTime = DateTime.Parse("2024-05-03T10:00:00Z"),
-                LocationId = 1
+                LocationId = Guid.NewGuid()
             });
 
             _timeblocks.Add(new TimeblockResponseDTO
             {
-                Id = 5,
-                GroupId = 2,
+                Id = Guid.NewGuid(),
+                GroupId = Guid.NewGuid(),
                 StartTime = DateTime.Parse("2024-05-04T14:30:00Z"),
                 EndTime = DateTime.Parse("2024-05-04T16:00:00Z"),
-                LocationId = 2
+                LocationId = Guid.NewGuid()
             });
 
             _timeblocks.Add(new TimeblockResponseDTO
             {
-                Id = 6,
-                GroupId = 3,
+                Id = Guid.NewGuid(),
+                GroupId = Guid.NewGuid(),
                 StartTime = DateTime.Parse("2024-05-05T10:00:00Z"),
                 EndTime = DateTime.Parse("2024-05-05T12:00:00Z"),
-                LocationId = 3
+                LocationId = Guid.NewGuid()
             });
 
             _timeblocks.Add(new TimeblockResponseDTO
             {
-                Id = 7,
-                GroupId = 4,
+                Id = new Guid(),
+                GroupId = new Guid(),
                 StartTime = DateTime.Parse("2024-05-06T16:00:00Z"),
                 EndTime = DateTime.Parse("2024-05-06T18:00:00Z"),
-                LocationId = 4
+                LocationId = new Guid()
             });
 
             _timeblocks.Add(new TimeblockResponseDTO
             {
-                Id = 8,
-                GroupId = 5,
+                Id = Guid.NewGuid(),
+                GroupId = Guid.NewGuid(),
                 StartTime = DateTime.Parse("2024-05-07T09:30:00Z"),
                 EndTime = DateTime.Parse("2024-05-07T11:30:00Z"),
-                LocationId = 5
+                LocationId = Guid.NewGuid()
             });
 
             _timeblocks.Add(new TimeblockResponseDTO
             {
-                Id = 9,
-                GroupId = 1,
+                Id = Guid.NewGuid(),
+                GroupId = Guid.NewGuid(),
                 StartTime = DateTime.Parse("2024-05-08T12:00:00Z"),
                 EndTime = DateTime.Parse("2024-05-08T14:00:00Z"),
-                LocationId = 1
+                LocationId = Guid.NewGuid()
             });
 
             _timeblocks.Add(new TimeblockResponseDTO
             {
-                Id = 10,
-                GroupId = 2,
+                Id = Guid.NewGuid(),
+                GroupId = Guid.NewGuid(),
                 StartTime = DateTime.Parse("2024-05-09T13:30:00Z"),
                 EndTime = DateTime.Parse("2024-05-09T15:00:00Z"),
-                LocationId = 2
+                LocationId = Guid.NewGuid()
             });
         }
     }

@@ -80,12 +80,12 @@ namespace Sail_MockApi.Api.Controllers
         }
 
         [HttpGet("{categoryId}")]
-        public IActionResult GetCategoryById(int categoryId)
+        public IActionResult GetCategoryById(string categoryId)
         {
             try
             {
                 // Fetch the category from the service by ID
-                var category = _informationService.GetCategoryById(categoryId);
+                var category = _informationService.GetCategoryById(Guid.Parse(categoryId));
 
                 // If the category is not found, return 404 Not Found
                 if (category == null)
@@ -111,12 +111,12 @@ namespace Sail_MockApi.Api.Controllers
         }
 
         [HttpPatch("{categoryId}")]
-        public IActionResult UpdateCategory(int categoryId, [FromBody] InfoCategoryRequestDTO updateCategoryRequest)
+        public IActionResult UpdateCategory(string categoryId, [FromBody] InfoCategoryRequestDTO updateCategoryRequest)
         {
             try
             {
                 // Update the category using the service
-                var updatedCategory = _informationService.UpdateCategory(categoryId, updateCategoryRequest.Name);
+                var updatedCategory = _informationService.UpdateCategory(Guid.Parse(categoryId), updateCategoryRequest.Name);
 
                 // If the category is not found, return 404 Not Found
                 if (updatedCategory == null)
@@ -142,12 +142,12 @@ namespace Sail_MockApi.Api.Controllers
         }
 
         [HttpDelete("{categoryId}")]
-        public IActionResult DeleteCategory(int categoryId)
+        public IActionResult DeleteCategory(string categoryId)
         {
             try
             {
                 // Delete the category using the service
-                var isDeleted = _informationService.DeleteCategory(categoryId);
+                var isDeleted = _informationService.DeleteCategory(Guid.Parse(categoryId));
 
                 // If the category is not found, return 404 Not Found
                 if (!isDeleted)

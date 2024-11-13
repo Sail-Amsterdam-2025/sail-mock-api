@@ -2,10 +2,10 @@
 {
     public class UpdateTimeblockDTO
     {
-        public int Id { get; set; } 
-        public int? GroupId { get; set; }
+        public string Id { get; set; } 
+        public string? GroupId { get; set; }
         public DateTime? StartTime { get; set; }
         public DateTime? EndTime { get; set; }
-        public int? LocationId { get; set; }
+        public string? LocationId { get; set; }
     }
 }

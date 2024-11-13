@@ -2,10 +2,10 @@
 {
     public class TimeblockResponseDTO
     {
-        public int Id { get; set; }
-        public int GroupId { get; set; }
+        public Guid Id { get; set; }
+        public Guid GroupId { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
-        public int LocationId { get; set; }
+        public Guid LocationId { get; set; }
     }
 }
