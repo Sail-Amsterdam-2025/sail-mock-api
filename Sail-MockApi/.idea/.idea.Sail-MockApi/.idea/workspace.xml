@@ -10,13 +10,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c11c2d8c-c825-4bad-8169-1aa6b52b51ba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sail-MockApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sail-MockApi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/ExampleRequestDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/ExampleRequestDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/ExampleResponseDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/ExampleResponseDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Interfaces/IDataService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Interfaces/IRequestDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Interfaces/IResponseDto.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/ExampleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/ExampleController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Services/ExampleDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Services/ExampleDataService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,9 +45,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.Sail-MockApi.Api: http.executor": "Run",
+    ".NET Launch Settings Profile.Sail-MockApi.Api: http.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "development",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
