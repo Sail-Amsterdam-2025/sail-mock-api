@@ -11,6 +11,8 @@ builder.Services.AddSwaggerGen();
 //. DataServices here
 builder.Services.AddScoped<ExampleDataService>();
 
+builder.Services.AddSingleton<InformationService>();
+
 
 var app = builder.Build();
 
