@@ -280,7 +280,7 @@ namespace Sail_MockApi.Api.Controllers
             return NoContent();
         }
 
-        [HttpPost("/auth/login")]
+        [HttpPost("/api/auth/login")]
         public IActionResult Login([FromBody] LoginDTO loginDto)
         {
             if (loginDto == null)
@@ -300,7 +300,7 @@ namespace Sail_MockApi.Api.Controllers
             return Ok(user);
         }
 
-        [HttpPost("/auth/refresh")]
+        [HttpPost("/api/auth/refresh")]
         public IActionResult RefreshToken()
         {
             //For if you have the header
@@ -332,7 +332,7 @@ namespace Sail_MockApi.Api.Controllers
 
         }
 
-        [HttpPost("/auth/register")]
+        [HttpPost("/api/auth/register")]
         public IActionResult Register([FromBody] NewRegisterDTO newUserDto)
         {
             if (newUserDto == null)

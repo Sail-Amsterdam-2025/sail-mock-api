@@ -6,11 +6,11 @@ namespace Sail_MockApi.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class TimeblockController : ControllerBase
+    public class TimeblocksController : ControllerBase
     {
         private TimeblockService _timeblockService;
 
-        public TimeblockController(TimeblockService timeblockService)
+        public TimeblocksController(TimeblockService timeblockService)
         {
             _timeblockService = timeblockService;
         }
@@ -36,17 +36,23 @@ namespace Sail_MockApi.Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetTimeblocks([FromQuery] int? limit, [FromQuery] int? offset, [FromQuery] int? groupId,
-                                    [FromQuery] DateTime? startTime, [FromQuery] DateTime? endTime)
+        public IActionResult GetTimeblocks([FromQuery] int limit = 50, [FromQuery] int offset = 0, [FromQuery] string? groupId = null,
+                                   [FromQuery] DateTime? startTime = null, [FromQuery] DateTime? endTime = null)
         {
             try
             {
-                // Set default values if not provided
-                limit = limit ?? 50;
-                offset = offset ?? 0;
+                Guid? parsedGroupId = null;
+                if (!string.IsNullOrEmpty(groupId))
+                {
+                    if (!Guid.TryParse(groupId, out var groupGuid))
+                    {
+                        return BadRequest(new { message = "Invalid Group ID format." });
+                    }
+                    parsedGroupId = groupGuid;
+                }
 
-                // Retrieve timeblocks (you could apply filtering based on the provided query params)
-                var timeblocks = _timeblockService.GetTimeblocks(limit.Value, offset.Value, groupId, startTime, endTime);
+                // Retrieve timeblocks with optional filtering based on the provided query params
+                var timeblocks = _timeblockService.GetTimeblocks(limit, offset, parsedGroupId, startTime, endTime);
 
                 // Return the list of timeblocks with status code 200
                 return Ok(timeblocks);
@@ -58,13 +64,16 @@ namespace Sail_MockApi.Api.Controllers
             }
         }
 
+
         [HttpPatch("{timeblockId}")]
-        public IActionResult UpdateTimeblock(int timeblockId, [FromBody] UpdateTimeblockDTO updateTimeblock)
+        public IActionResult UpdateTimeblock(string timeblockId, [FromBody] UpdateTimeblockDTO updateTimeblock)
         {
             try
             {
                 // Fetch the existing timeblock by ID
-                var timeblock = _timeblockService.GetTimeblockById(timeblockId);
+                Guid guid = Guid.Parse(timeblockId);
+
+                var timeblock = _timeblockService.GetTimeblockById(guid);
 
                 if (timeblock == null)
                 {
@@ -72,21 +81,29 @@ namespace Sail_MockApi.Api.Controllers
                 }
 
                 // Update the properties of the timeblock based on the provided DTO
-                if (updateTimeblock.GroupId.HasValue)
+
+                // Check and update GroupId
+                if (!string.IsNullOrEmpty(updateTimeblock.GroupId) && Guid.TryParse(updateTimeblock.GroupId, out var groupId))
                 {
-                    timeblock.GroupId = updateTimeblock.GroupId.Value;
+                    timeblock.GroupId = groupId;
                 }
+
+                // Check and update StartTime
                 if (updateTimeblock.StartTime.HasValue)
                 {
                     timeblock.StartTime = updateTimeblock.StartTime.Value;
                 }
+
+                // Check and update EndTime
                 if (updateTimeblock.EndTime.HasValue)
                 {
                     timeblock.EndTime = updateTimeblock.EndTime.Value;
                 }
-                if (updateTimeblock.LocationId.HasValue)
+
+                // Check and update LocationId
+                if (!string.IsNullOrEmpty(updateTimeblock.LocationId) && Guid.TryParse(updateTimeblock.LocationId, out var locationId))
                 {
-                    timeblock.LocationId = updateTimeblock.LocationId.Value;
+                    timeblock.LocationId = locationId;
                 }
 
                 // Save the updated timeblock (this might involve saving to a database)
@@ -110,13 +127,14 @@ namespace Sail_MockApi.Api.Controllers
             }
         }
 
+
         [HttpGet("{timeblockId}")]
-        public IActionResult GetTimeblockById(int timeblockId)
+        public IActionResult GetTimeblockById(string timeblockId)
         {
             try
             {
                 // Fetch the timeblock by ID
-                var timeblock = _timeblockService.GetTimeblockById(timeblockId);
+                var timeblock = _timeblockService.GetTimeblockById(Guid.Parse(timeblockId));
 
                 if (timeblock == null)
                 {
@@ -143,12 +161,12 @@ namespace Sail_MockApi.Api.Controllers
         }
 
         [HttpDelete("{timeblockId}")]
-        public IActionResult DeleteTimeblock(int timeblockId)
+        public IActionResult DeleteTimeblock(string timeblockId)
         {
             try
             {
                 // Fetch the timeblock to check if it exists
-                var timeblock = _timeblockService.GetTimeblockById(timeblockId);
+                var timeblock = _timeblockService.GetTimeblockById(Guid.Parse(timeblockId));
 
                 if (timeblock == null)
                 {
@@ -157,7 +175,7 @@ namespace Sail_MockApi.Api.Controllers
                 }
 
                 // Proceed to delete the timeblock
-                var isDeleted = _timeblockService.DeleteTimeblock(timeblockId);
+                var isDeleted = _timeblockService.DeleteTimeblock(Guid.Parse(timeblockId));
 
                 if (!isDeleted)
                 {
