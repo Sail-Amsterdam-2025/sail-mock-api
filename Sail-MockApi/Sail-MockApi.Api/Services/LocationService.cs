@@ -16,8 +16,8 @@ namespace Sail_MockApi.Api.Services
         {
             if (Locations.Count == 0)
             {
-                Locations.Add(new LocationResponseDto(Guid.NewGuid().ToString(), "ehbo post 1", new List<CoordinateResponseDto> { new CoordinateResponseDto(Guid.NewGuid().ToString(), 1, 4.891140027255756, 52.40472178878887) }));
-                Locations.Add(new LocationResponseDto(Guid.NewGuid().ToString(), "Area 1", new List<CoordinateResponseDto> { new CoordinateResponseDto(Guid.NewGuid().ToString(), 1, 4.893310518382505, 52.402979421681266),
+                Locations.Add(new LocationResponseDto(Guid.NewGuid().ToString(), "ehbo post 1", "PinPoint", "Green", new List<CoordinateResponseDto> { new CoordinateResponseDto(Guid.NewGuid().ToString(), 1, 4.891140027255756, 52.40472178878887) }));
+                Locations.Add(new LocationResponseDto(Guid.NewGuid().ToString(), "Area 1", "Area", "Purple", new List<CoordinateResponseDto> { new CoordinateResponseDto(Guid.NewGuid().ToString(), 1, 4.893310518382505, 52.402979421681266),
                 new CoordinateResponseDto(Guid.NewGuid().ToString(), 2, 4.889426481683392, 52.41245706779914), new CoordinateResponseDto(Guid.NewGuid().ToString(), 3, 4.8985653915636584, 52.406673158281656)}));
             }
 
