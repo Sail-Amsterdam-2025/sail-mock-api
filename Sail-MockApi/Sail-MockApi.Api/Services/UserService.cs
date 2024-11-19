@@ -1,4 +1,5 @@
-﻿using Sail_MockApi.Api.DTOs.Users;
+﻿using Sail_MockApi.Api.DTOs;
+using Sail_MockApi.Api.DTOs.Users;
 
 namespace Sail_MockApi.Api.Services
 {
@@ -136,9 +137,9 @@ namespace Sail_MockApi.Api.Services
             return true;
         }
 
-        public string Login(LoginDTO loginDto)
+        public LoginResponseDto Login(LoginDTO loginDto)
         {
-            return "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
+            return new LoginResponseDto();
         }
 
         public string[] Refresh(string token)
