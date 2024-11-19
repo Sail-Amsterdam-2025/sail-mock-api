@@ -6,7 +6,7 @@ namespace Sail_MockApi.Api.Services
     public class GroupService
     {
         private static List<GroupResponseDto> Groups { get; set; } = new List<GroupResponseDto>();
-
+    private List<GroupLeaderResponseDto> GroupLeaders { get; set; } = new List<GroupLeaderResponseDto>();
         public GroupService()
         {
             AddDataToList();
@@ -17,25 +17,48 @@ namespace Sail_MockApi.Api.Services
         {
             if (Groups.Count == 0)
             {
-                Groups.Add(new GroupResponseDto(Guid.NewGuid().ToString(), "Development Team", Guid.NewGuid().ToString(), Guid.NewGuid().ToString()));
-                Groups.Add(new GroupResponseDto(Guid.NewGuid().ToString(), "Marketing Team", Guid.NewGuid().ToString(), Guid.NewGuid().ToString()));
-                Groups.Add(new GroupResponseDto(Guid.NewGuid().ToString(), "Sales Team", Guid.NewGuid().ToString(), Guid.NewGuid().ToString()));
-                Groups.Add(new GroupResponseDto(Guid.NewGuid().ToString(), "Human Resources", Guid.NewGuid().ToString(), Guid.NewGuid().ToString()));
-                Groups.Add(new GroupResponseDto(Guid.NewGuid().ToString(), "Research and Development", Guid.NewGuid().ToString(), Guid.NewGuid().ToString()));
-                Groups.Add(new GroupResponseDto(Guid.NewGuid().ToString(), "Customer Support", Guid.NewGuid().ToString(), Guid.NewGuid().ToString()));
+                Guid[] groupIds = new Guid[6];
+                for (int i = 0; i < groupIds.Length; i++)
+                {
+                    groupIds[i] = Guid.NewGuid();
+                }
+                
+                
+                GroupLeaders.Add(new GroupLeaderResponseDto(groupIds[0], Guid.NewGuid(), "0612345678"));
+                GroupLeaders.Add(new GroupLeaderResponseDto(groupIds[1], Guid.NewGuid(), "0612345678"));
+                GroupLeaders.Add(new GroupLeaderResponseDto(groupIds[2], Guid.NewGuid(), "0612345678"));
+                GroupLeaders.Add(new GroupLeaderResponseDto(groupIds[3], Guid.NewGuid(), "0612345678"));
+                GroupLeaders.Add(new GroupLeaderResponseDto(groupIds[4], Guid.NewGuid(), "0612345678"));
+                GroupLeaders.Add(new GroupLeaderResponseDto(groupIds[5], Guid.NewGuid(), "0612345678"));
+                
+                
+                Groups.Add(new GroupResponseDto(groupIds[0].ToString(), "Development Team", Guid.NewGuid().ToString(), GroupLeaders[0]));
+                Groups.Add(new GroupResponseDto(groupIds[1].ToString(), "Marketing Team", Guid.NewGuid().ToString(), GroupLeaders[1]));
+                Groups.Add(new GroupResponseDto(groupIds[2].ToString(), "Sales Team", Guid.NewGuid().ToString(), GroupLeaders[2]));
+                Groups.Add(new GroupResponseDto(groupIds[3].ToString(), "Human Resources", Guid.NewGuid().ToString(), GroupLeaders[3]));
+                Groups.Add(new GroupResponseDto(groupIds[4].ToString(), "Research and Development", Guid.NewGuid().ToString(), GroupLeaders[4]));
+                Groups.Add(new GroupResponseDto(groupIds[5].ToString(), "Customer Support", Guid.NewGuid().ToString(), GroupLeaders[5]));
             }
             
         }
 
         public GroupResponseDto AddGroup(GroupRequestDto groupRequestDto)
         {
-            string id = Guid.NewGuid().ToString();
-            GroupResponseDto newGroup = new GroupResponseDto(groupRequestDto, id);
-            Groups.Add(newGroup);
-            return newGroup;
+            try
+            {
+
+                string id = Guid.NewGuid().ToString();
+                GroupResponseDto newGroup = new GroupResponseDto(groupRequestDto, id);
+                Groups.Add(newGroup);
+                return newGroup;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public List<GroupResponseDto> GetAllGroups(int limit = 10, int offset = 0, string name = null, string? roleId = null, string? teamLeaderId = null)
+        public List<GroupResponseDto> GetAllGroups(int limit = 10, int offset = 0, string name = null, string? roleId = null, string? groupLeaderId = null)
         {
             var query = Groups.AsQueryable();
 
@@ -49,9 +72,9 @@ namespace Sail_MockApi.Api.Services
                 query = query.Where(g => g.RoleId.Contains(roleId, StringComparison.OrdinalIgnoreCase));
             }
 
-            if (!string.IsNullOrEmpty(teamLeaderId))
+            if (!string.IsNullOrEmpty(groupLeaderId))
             {
-                query = query.Where(g => g.TeamLeaderId.Contains(teamLeaderId, StringComparison.OrdinalIgnoreCase));
+                query = query.Where(g => g.GroupLeader.Id == Guid.Parse(groupLeaderId));
             }
 
             query = query.Skip(offset).Take(limit);
@@ -96,9 +119,9 @@ namespace Sail_MockApi.Api.Services
                 group.RoleId = updatedGroup.RoleId;
             }
 
-            if (!string.IsNullOrEmpty(updatedGroup.TeamLeaderId))
+            if (updatedGroup.GroupLeader != null)
             {
-                group.TeamLeaderId = updatedGroup.TeamLeaderId;
+                group.GroupLeader = new GroupLeaderResponseDto(updatedGroup.GroupLeader);
             }
 
             return group;

@@ -7,7 +7,7 @@ namespace Sail_MockApi.Api.DTOs
         public string Id { get; set; }
         public string Name { get; set; }
         public string RoleId { get; set; }
-        public string TeamLeaderId { get; set; }
+        public GroupLeaderResponseDto? GroupLeader { get; set; }
 
 
 
@@ -15,16 +15,19 @@ namespace Sail_MockApi.Api.DTOs
             Id = id;
             Name = groupRequest.Name;
             RoleId = groupRequest.RoleId;
-            TeamLeaderId = groupRequest.TeamLeaderId;
+            if (groupRequest.GroupLeader != null)
+            {
+                GroupLeader = new GroupLeaderResponseDto(groupRequest.GroupLeader);
+            }
 
         }
 
-        public GroupResponseDto(string id, string name, string roleId, string teamLeaderId)
+        public GroupResponseDto(string id, string name, string roleId, GroupLeaderResponseDto groupLeaderResponseDto)
         {
             Id = id;
             Name = name;
             RoleId = roleId;
-            TeamLeaderId = teamLeaderId;
+            GroupLeader = groupLeaderResponseDto;
         }
     }
 }

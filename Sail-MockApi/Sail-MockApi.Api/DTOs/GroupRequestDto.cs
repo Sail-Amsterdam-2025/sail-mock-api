@@ -4,6 +4,6 @@
     {
         public string Name { get; set; }
         public string RoleId { get; set; }
-        public string TeamLeaderId { get; set; }
+        public GroupLeaderRequestDto? GroupLeader { get; set; }
     }
 }

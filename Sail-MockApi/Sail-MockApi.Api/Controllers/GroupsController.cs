@@ -55,15 +55,21 @@ namespace Sail_MockApi.Api.Controllers
             {
                 return BadRequest("Group request data is required.");
             }
-
-            var groupResponse = _groupService.AddGroup(groupRequest);
-
-            if (groupResponse == null)
+            try
             {
-                return BadRequest("Failed to add the group.");
-            }
+                var groupResponse = _groupService.AddGroup(groupRequest);
+                
+                if (groupResponse == null)
+                {
+                    return BadRequest("Failed to add the group.");
+                }
 
-            return CreatedAtAction(nameof(Post), new { id = groupResponse.Id }, groupResponse);
+                return CreatedAtAction(nameof(Post), new { id = groupResponse.Id }, groupResponse);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // PUT api/<ExampleController>/5

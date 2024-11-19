@@ -9,15 +9,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c11c2d8c-c825-4bad-8169-1aa6b52b51ba" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/GroupLeaderRequestDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/GroupLeaderResponseDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sail-MockApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sail-MockApi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/ExampleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/ExampleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/GroupController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/GroupsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/InfoCategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/InfoCategoriesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/LocationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/LocationsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/RoleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/RolesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/TaskController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/TasksController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/TimeblockController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/TimeblocksController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/UsersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/GroupsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Controllers/GroupsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/GroupRequestDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/GroupRequestDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/GroupResponseDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/DTOs/GroupResponseDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sail-MockApi.Api/Services/GroupService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sail-MockApi.Api/Services/GroupService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +28,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "DewiCabret"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Sail-Amsterdam-2025/sail-mock-api.git",
+    "accountId": "c6a29252-b355-400d-a04a-dbe5360f06d3"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/42e22a24527d5d22c19ad27022521aa1c09b8f8188aa38d3e0d76df5c1cb474a/Guid.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -56,7 +66,7 @@
   "keyToString": {
     ".NET Launch Settings Profile.Sail-MockApi.Api: http.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "development",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -135,6 +145,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731447202916</updated>
       <workItem from="1731447204138" duration="4519000" />
+      <workItem from="1732035167575" duration="1536000" />
     </task>
     <servers />
   </component>
