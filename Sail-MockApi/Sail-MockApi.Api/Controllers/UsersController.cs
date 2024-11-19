@@ -280,7 +280,7 @@ namespace Sail_MockApi.Api.Controllers
             return NoContent();
         }
 
-        [HttpPost("/api/auth/login")]
+        [HttpPost("/api/Users/auth/login")]
         public IActionResult Login([FromBody] LoginDTO loginDto)
         {
             if (loginDto == null)
@@ -295,12 +295,12 @@ namespace Sail_MockApi.Api.Controllers
                 return NotFound("User not found.");
             }
 
-            Response.Headers.Add("Authorization", $"Bearer {user}");
+            Response.Headers.Add("Authorization", $"Bearer {user.AccessToken}");
 
             return Ok(user);
         }
 
-        [HttpPost("/api/auth/refresh")]
+        [HttpPost("/api/Users/auth/refresh")]
         public IActionResult RefreshToken()
         {
             //For if you have the header
@@ -332,7 +332,7 @@ namespace Sail_MockApi.Api.Controllers
 
         }
 
-        [HttpPost("/api/auth/register")]
+        [HttpPost("/api/Users/auth/register")]
         public IActionResult Register([FromBody] NewRegisterDTO newUserDto)
         {
             if (newUserDto == null)
