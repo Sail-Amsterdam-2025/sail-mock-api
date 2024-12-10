@@ -19,8 +19,7 @@ builder.Services.AddSingleton<TimeblockService>();
 builder.Services.AddScoped<GroupService>();
 builder.Services.AddScoped<RoleService>();
 builder.Services.AddScoped<LocationService>();
-builder.Services.AddScoped<MapService>();   
-
+builder.Services.AddScoped<MapService>();
 
 var app = builder.Build();
 
@@ -33,6 +32,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseSwagger();
 app.UseSwaggerUI();
+app.UseCors(corsBuilder =>
+{
+    corsBuilder.AllowAnyOrigin();
+    corsBuilder.AllowAnyMethod();
+    corsBuilder.AllowAnyHeader();
+});
 
 app.MapControllers();
 
